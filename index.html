@@ -30,7 +30,7 @@
   <symbol id="ster" viewBox="0 0 24 24"><path d="M12 1 Q13 10 23 12 Q13 14 12 23 Q11 14 1 12 Q11 10 12 1Z" fill="currentColor"/></symbol>
 </svg>
 
-<div class="topbar"><span id="topbarTekst">Gratis verzending vanaf €50</span><span class="dot" aria-hidden="true">·</span><span>Elk sieraad in ons fluwelen zakje</span></div>
+<div class="topbar"><span id="topbarTekst" data-dyn>Gratis verzending vanaf €50</span><span class="dot" aria-hidden="true">·</span><span>Elk sieraad in ons fluwelen zakje</span></div>
 
 <header class="header">
   <div class="wrap header-in">
@@ -44,9 +44,12 @@
       <a href="#collectie" data-cat="armbanden">Armbanden</a>
       <a href="#verhaal">Ons verhaal</a>
     </nav>
+    <div class="lang" id="lang" role="group" aria-label="Taal kiezen">
+      <button type="button" data-lang="nl" lang="nl" aria-pressed="true" title="Nederlands">NL</button><button type="button" data-lang="en" lang="en" aria-pressed="false" title="English">EN</button><button type="button" data-lang="es" lang="es" aria-pressed="false" title="Español">ES</button>
+    </div>
     <button class="cart-btn" id="cartBtn" aria-label="Winkelmandje openen">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-      <span class="cart-count" id="cartCount" hidden>0</span>
+      <span class="cart-count" id="cartCount" data-dyn hidden>0</span>
     </button>
   </div>
 </header>
@@ -70,7 +73,7 @@
 
   <section class="collection wrap" id="collectie">
     <div class="sec-head">
-      <div><p class="eyebrow">De collectie</p><h2 id="colTitel">Alle sieraden</h2></div>
+      <div><p class="eyebrow">De collectie</p><h2 id="colTitel" data-dyn>Alle sieraden</h2></div>
       <div class="tools">
         <div class="chips" id="chips" role="group" aria-label="Filter op categorie"></div>
         <label class="sort"><span class="sr">Sorteren</span>
@@ -94,7 +97,7 @@
   </section>
 
   <section class="usp wrap" aria-label="Service">
-    <div><svg class="star"><use href="#ster"/></svg><h3>Gratis verzending</h3><p id="uspVerzending">Vanaf €50 in Nederland en België.</p></div>
+    <div><svg class="star"><use href="#ster"/></svg><h3>Gratis verzending</h3><p id="uspVerzending" data-dyn>Vanaf €50 in Nederland en België.</p></div>
     <div><svg class="star"><use href="#ster"/></svg><h3>14 dagen bedenktijd</h3><p>Niet tevreden? Stuur het eenvoudig terug.</p></div>
     <div><svg class="star"><use href="#ster"/></svg><h3>Cadeauklaar</h3><p>Altijd verpakt in ons fluwelen zakje.</p></div>
     <div><svg class="star"><use href="#ster"/></svg><h3>Persoonlijke service</h3><p>Vragen over een sieraad? We helpen je graag.</p></div>
@@ -106,9 +109,9 @@
     <div class="f-brand"><svg class="brand-mark"><use href="#kompas"/></svg><span class="brand-name">MAÉI</span><p>Sieraden die je richting geven.</p></div>
     <div><h4>Winkel</h4><a href="#collectie" data-cat="ringen">Ringen</a><a href="#collectie" data-cat="kettingen">Kettingen</a><a href="#collectie" data-cat="oorbellen">Oorbellen</a><a href="#collectie" data-cat="armbanden">Armbanden</a></div>
     <div><h4>Service</h4><button type="button" class="link" data-info="verzending">Verzending &amp; retour</button><button type="button" class="link" data-info="verzorging">Verzorging</button><button type="button" class="link" data-info="voorwaarden">Algemene voorwaarden</button><button type="button" class="link" data-info="privacy">Privacy</button></div>
-    <div><h4>Contact</h4><p id="contactTekst">Vragen? Stuur ons een bericht.</p><a id="contactMail" hidden></a><a id="contactInsta" hidden target="_blank" rel="noopener">Instagram</a></div>
+    <div><h4>Contact</h4><p id="contactTekst">Vragen? Stuur ons een bericht.</p><a id="contactMail" data-dyn hidden></a><a id="contactInsta" hidden target="_blank" rel="noopener">Instagram</a></div>
   </div>
-  <p class="wrap copy">© <span id="jaar"></span> MAÉI. Alle rechten voorbehouden.</p>
+  <p class="wrap copy">© <span id="jaar" data-dyn></span> MAÉI. Alle rechten voorbehouden.</p>
 </footer>
 
 <!-- productdetail -->
@@ -117,12 +120,12 @@
   <div class="pd">
     <div class="pd-img" id="pdImg"></div>
     <div class="pd-info">
-      <p class="eyebrow" id="pdCat"></p>
-      <h2 id="pdNaam"></h2>
-      <p class="pd-prijs" id="pdPrijs"></p>
-      <p id="pdTekst"></p>
+      <p class="eyebrow" id="pdCat" data-dyn></p>
+      <h2 id="pdNaam" data-dyn></h2>
+      <p class="pd-prijs" id="pdPrijs" data-dyn></p>
+      <p id="pdTekst" data-dyn></p>
       <fieldset class="metaal"><legend>Kleur</legend><div id="pdMetaal"></div></fieldset>
-      <div class="qty-row"><div class="qty" aria-label="Aantal"><button type="button" id="pdMin" aria-label="Eén minder">−</button><output id="pdAantal">1</output><button type="button" id="pdPlus" aria-label="Eén meer">+</button></div>
+      <div class="qty-row"><div class="qty" aria-label="Aantal"><button type="button" id="pdMin" aria-label="Eén minder">−</button><output id="pdAantal" data-dyn>1</output><button type="button" id="pdPlus" aria-label="Eén meer">+</button></div>
       <button class="btn wide" type="button" id="pdAdd">In winkelmandje</button></div>
       <ul class="pd-usp"><li>Verzonden in het MAÉI fluwelen zakje</li><li>Meestal binnen 1–2 werkdagen verstuurd</li><li>14 dagen bedenktijd</li></ul>
     </div>
@@ -136,7 +139,7 @@
   <p class="ship-bar" id="shipBar"></p>
   <div class="drawer-items" id="cartItems"></div>
   <div class="drawer-foot" id="cartFoot">
-    <div class="sum-row"><span>Subtotaal</span><b id="cartSub"></b></div>
+    <div class="sum-row"><span>Subtotaal</span><b id="cartSub" data-dyn></b></div>
     <p class="note">Verzendkosten worden berekend bij het afrekenen.</p>
     <button class="btn wide" type="button" id="toCheckout">Afrekenen</button>
   </div>
@@ -157,21 +160,21 @@
       <div class="f2"><label>Plaats<input name="plaats" autocomplete="address-level2" required></label><label>Land<select name="land" autocomplete="country-name"><option>Nederland</option><option>België</option></select></label></div>
       <label class="check"><input type="checkbox" name="cadeau"> Dit is een cadeau (geen prijzen op de pakbon)</label>
       <label>Opmerking <span class="opt">(optioneel)</span><textarea name="opmerking" rows="2" maxlength="500"></textarea></label>
-      <p class="co-err" id="coErr" role="alert"></p>
-      <button class="btn wide" type="submit" id="coSubmit">Bestelling plaatsen</button>
-      <p class="note" id="coNote"></p>
+      <p class="co-err" id="coErr" data-dyn role="alert"></p>
+      <button class="btn wide" type="submit" id="coSubmit" data-dyn>Bestelling plaatsen</button>
+      <p class="note" id="coNote" data-dyn></p>
     </form>
     <div class="co-sum"><h3>Je bestelling</h3><div id="coItems"></div>
-      <div class="sum-row"><span>Subtotaal</span><span id="coSub"></span></div>
-      <div class="sum-row"><span>Verzending</span><span id="coShip"></span></div>
-      <div class="sum-row total"><span>Totaal</span><b id="coTotal"></b></div>
+      <div class="sum-row"><span>Subtotaal</span><span id="coSub" data-dyn></span></div>
+      <div class="sum-row"><span>Verzending</span><span id="coShip" data-dyn></span></div>
+      <div class="sum-row total"><span>Totaal</span><b id="coTotal" data-dyn></b></div>
       <p class="note">Prijzen zijn inclusief btw.</p>
     </div>
   </div>
   <div class="co-done" id="coDone" hidden>
     <svg class="done-mark" aria-hidden="true"><use href="#kompas"/></svg>
     <h2>Dank je wel!</h2>
-    <p id="coDoneTekst"></p>
+    <p id="coDoneTekst" data-dyn></p>
     <button class="btn" type="button" data-close>Verder winkelen</button>
   </div>
 </dialog>
@@ -185,6 +188,7 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="config.js"></script>
+<script src="i18n.js"></script>
 <script src="products.js"></script>
 <script src="app.js"></script>
 </body>
