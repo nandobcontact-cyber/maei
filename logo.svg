@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="MAÉI">
+  <g fill="#5C0A14" stroke="#FDF8F2" stroke-width="3" stroke-linejoin="round" paint-order="stroke">
+    <circle cx="100" cy="100" r="54" fill="none" stroke="#5C0A14" stroke-width="3.5"/>
+    <g id="d">
+      <polygon points="100,100 142,58 107,107"/>
+      <polygon points="100,100 142,58 93,93"/>
+    </g>
+    <use href="#d" transform="rotate(90 100 100)"/>
+    <use href="#d" transform="rotate(180 100 100)"/>
+    <use href="#d" transform="rotate(270 100 100)"/>
+    <g id="a">
+      <polygon points="100,4 110,90 100,100"/>
+      <polygon points="100,4 90,90 100,100"/>
+    </g>
+    <use href="#a" transform="rotate(90 100 100)"/>
+    <use href="#a" transform="rotate(180 100 100)"/>
+    <use href="#a" transform="rotate(270 100 100)"/>
+    <circle cx="100" cy="100" r="27" fill="#FDF8F2" stroke="#FDF8F2" stroke-width="4"/>
+    <circle cx="100" cy="100" r="24" fill="none" stroke="#5C0A14" stroke-width="3.5"/>
+    <path d="M163 22 Q165 33 176 35 Q165 37 163 48 Q161 37 150 35 Q161 33 163 22Z" stroke="none"/>
+  </g>
+  <text x="100" y="111.5" text-anchor="middle" font-family="Cinzel, 'Trajan Pro', Georgia, serif" font-weight="700" font-size="31" fill="#5C0A14">M</text>
+</svg>

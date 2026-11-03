@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MAÉI · Sieraden</title>
+<meta name="description" content="MAÉI – fijne sieraden in goud en zilver. Ringen, kettingen, oorbellen en armbanden, geleverd in ons fluwelen zakje.">
+<meta name="theme-color" content="#5C0A14">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="kompas" viewBox="0 0 200 200">
+    <g fill="currentColor" style="stroke:var(--logo-bg,#FDF8F2)" stroke-width="3" stroke-linejoin="round" paint-order="stroke">
+      <circle cx="100" cy="100" r="54" fill="none" stroke="currentColor" stroke-width="3.5"/>
+      <g id="kd"><polygon points="100,100 142,58 107,107"/><polygon points="100,100 142,58 93,93"/></g>
+      <use href="#kd" transform="rotate(90 100 100)"/><use href="#kd" transform="rotate(180 100 100)"/><use href="#kd" transform="rotate(270 100 100)"/>
+      <g id="ka"><polygon points="100,4 110,90 100,100"/><polygon points="100,4 90,90 100,100"/></g>
+      <use href="#ka" transform="rotate(90 100 100)"/><use href="#ka" transform="rotate(180 100 100)"/><use href="#ka" transform="rotate(270 100 100)"/>
+      <circle cx="100" cy="100" r="27" style="fill:var(--logo-bg,#FDF8F2);stroke:var(--logo-bg,#FDF8F2)" stroke-width="4"/>
+      <circle cx="100" cy="100" r="24" fill="none" stroke="currentColor" stroke-width="3.5"/>
+      <path d="M163 22 Q165 33 176 35 Q165 37 163 48 Q161 37 150 35 Q161 33 163 22Z" stroke="none"/>
+    </g>
+    <text x="100" y="111.5" text-anchor="middle" font-family="Cinzel, Georgia, serif" font-weight="700" font-size="31" fill="currentColor">M</text>
+  </symbol>
+  <symbol id="ster" viewBox="0 0 24 24"><path d="M12 1 Q13 10 23 12 Q13 14 12 23 Q11 14 1 12 Q11 10 12 1Z" fill="currentColor"/></symbol>
+</svg>
+
+<div class="topbar"><span id="topbarTekst">Gratis verzending vanaf €50</span><span class="dot" aria-hidden="true">·</span><span>Elk sieraad in ons fluwelen zakje</span></div>
+
+<header class="header">
+  <div class="wrap header-in">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu openen" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a class="brand" href="#top" aria-label="MAÉI, naar de startpagina"><svg class="brand-mark"><use href="#kompas"/></svg><span class="brand-name">MAÉI</span></a>
+    <nav class="nav" id="nav" aria-label="Hoofdmenu">
+      <a href="#collectie" data-cat="">Collectie</a>
+      <a href="#collectie" data-cat="ringen">Ringen</a>
+      <a href="#collectie" data-cat="kettingen">Kettingen</a>
+      <a href="#collectie" data-cat="oorbellen">Oorbellen</a>
+      <a href="#collectie" data-cat="armbanden">Armbanden</a>
+      <a href="#verhaal">Ons verhaal</a>
+    </nav>
+    <button class="cart-btn" id="cartBtn" aria-label="Winkelmandje openen">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <span class="cart-count" id="cartCount" hidden>0</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-text">
+        <p class="eyebrow"><svg class="star"><use href="#ster"/></svg> Nieuwe collectie</p>
+        <h1>Sieraden die je <em>richting</em> geven</h1>
+        <p class="lead">Fijne ringen, kettingen, oorbellen en armbanden in goud en zilver. Om zelf te dragen, of om iemand blij te maken.</p>
+        <div class="hero-actions"><a class="btn" href="#collectie">Bekijk de collectie</a><a class="btn ghost" href="#verhaal">Ons verhaal</a></div>
+      </div>
+      <figure class="hero-img"><img src="zakje.jpg" alt="Roze fluwelen MAÉI-zakje met bordeaux lint" width="1200" height="978"></figure>
+    </div>
+  </section>
+
+  <section class="cats wrap" aria-label="Categorieën">
+    <div class="cat-grid" id="catGrid"></div>
+  </section>
+
+  <section class="collection wrap" id="collectie">
+    <div class="sec-head">
+      <div><p class="eyebrow">De collectie</p><h2 id="colTitel">Alle sieraden</h2></div>
+      <div class="tools">
+        <div class="chips" id="chips" role="group" aria-label="Filter op categorie"></div>
+        <label class="sort"><span class="sr">Sorteren</span>
+          <select id="sort"><option value="">Uitgelicht</option><option value="laag">Prijs: laag – hoog</option><option value="hoog">Prijs: hoog – laag</option><option value="nieuw">Nieuw</option></select>
+        </label>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="story" id="verhaal">
+    <div class="wrap story-in">
+      <svg class="story-mark" aria-hidden="true"><use href="#kompas"/></svg>
+      <div>
+        <p class="eyebrow">Ons verhaal</p>
+        <h2>Een kompas voor wie haar eigen koers vaart</h2>
+        <p>MAÉI is begonnen door twee mensen met een liefde voor kleine, mooie dingen. Het kompas in ons logo staat voor de momenten die je richting geven: een nieuwe stap, een herinnering, iemand die je dierbaar is.</p>
+        <p>Elk sieraad kiezen we met zorg uit en versturen we in ons zachtroze fluwelen zakje, klaar om te geven of te houden.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="usp wrap" aria-label="Service">
+    <div><svg class="star"><use href="#ster"/></svg><h3>Gratis verzending</h3><p id="uspVerzending">Vanaf €50 in Nederland en België.</p></div>
+    <div><svg class="star"><use href="#ster"/></svg><h3>14 dagen bedenktijd</h3><p>Niet tevreden? Stuur het eenvoudig terug.</p></div>
+    <div><svg class="star"><use href="#ster"/></svg><h3>Cadeauklaar</h3><p>Altijd verpakt in ons fluwelen zakje.</p></div>
+    <div><svg class="star"><use href="#ster"/></svg><h3>Persoonlijke service</h3><p>Vragen over een sieraad? We helpen je graag.</p></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div class="f-brand"><svg class="brand-mark"><use href="#kompas"/></svg><span class="brand-name">MAÉI</span><p>Sieraden die je richting geven.</p></div>
+    <div><h4>Winkel</h4><a href="#collectie" data-cat="ringen">Ringen</a><a href="#collectie" data-cat="kettingen">Kettingen</a><a href="#collectie" data-cat="oorbellen">Oorbellen</a><a href="#collectie" data-cat="armbanden">Armbanden</a></div>
+    <div><h4>Service</h4><button type="button" class="link" data-info="verzending">Verzending &amp; retour</button><button type="button" class="link" data-info="verzorging">Verzorging</button><button type="button" class="link" data-info="voorwaarden">Algemene voorwaarden</button><button type="button" class="link" data-info="privacy">Privacy</button></div>
+    <div><h4>Contact</h4><p id="contactTekst">Vragen? Stuur ons een bericht.</p><a id="contactMail" hidden></a><a id="contactInsta" hidden target="_blank" rel="noopener">Instagram</a></div>
+  </div>
+  <p class="wrap copy">© <span id="jaar"></span> MAÉI. Alle rechten voorbehouden.</p>
+</footer>
+
+<!-- productdetail -->
+<dialog id="productDlg" class="dlg product-dlg" aria-labelledby="pdNaam">
+  <button class="close" type="button" data-close aria-label="Sluiten">×</button>
+  <div class="pd">
+    <div class="pd-img" id="pdImg"></div>
+    <div class="pd-info">
+      <p class="eyebrow" id="pdCat"></p>
+      <h2 id="pdNaam"></h2>
+      <p class="pd-prijs" id="pdPrijs"></p>
+      <p id="pdTekst"></p>
+      <fieldset class="metaal"><legend>Kleur</legend><div id="pdMetaal"></div></fieldset>
+      <div class="qty-row"><div class="qty" aria-label="Aantal"><button type="button" id="pdMin" aria-label="Eén minder">−</button><output id="pdAantal">1</output><button type="button" id="pdPlus" aria-label="Eén meer">+</button></div>
+      <button class="btn wide" type="button" id="pdAdd">In winkelmandje</button></div>
+      <ul class="pd-usp"><li>Verzonden in het MAÉI fluwelen zakje</li><li>Meestal binnen 1–2 werkdagen verstuurd</li><li>14 dagen bedenktijd</li></ul>
+    </div>
+  </div>
+</dialog>
+
+<!-- winkelmandje -->
+<div class="drawer-bg" id="drawerBg" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Winkelmandje" aria-hidden="true">
+  <div class="drawer-head"><h2>Winkelmandje</h2><button class="close" type="button" id="drawerClose" aria-label="Winkelmandje sluiten">×</button></div>
+  <p class="ship-bar" id="shipBar"></p>
+  <div class="drawer-items" id="cartItems"></div>
+  <div class="drawer-foot" id="cartFoot">
+    <div class="sum-row"><span>Subtotaal</span><b id="cartSub"></b></div>
+    <p class="note">Verzendkosten worden berekend bij het afrekenen.</p>
+    <button class="btn wide" type="button" id="toCheckout">Afrekenen</button>
+  </div>
+</aside>
+
+<!-- afrekenen -->
+<dialog id="checkoutDlg" class="dlg checkout-dlg" aria-labelledby="coTitel">
+  <button class="close" type="button" data-close aria-label="Sluiten">×</button>
+  <div class="co" id="coForm">
+    <form id="coFormEl" novalidate>
+      <h2 id="coTitel">Afrekenen</h2>
+      <h3>Contactgegevens</h3>
+      <div class="f2"><label>Voornaam<input name="voornaam" autocomplete="given-name" required></label><label>Achternaam<input name="achternaam" autocomplete="family-name" required></label></div>
+      <label>E-mailadres<input name="email" type="email" autocomplete="email" required></label>
+      <label>Telefoon <span class="opt">(optioneel)</span><input name="telefoon" type="tel" autocomplete="tel"></label>
+      <h3>Bezorgadres</h3>
+      <div class="f2"><label>Straat en huisnummer<input name="adres" autocomplete="street-address" required></label><label>Postcode<input name="postcode" autocomplete="postal-code" required></label></div>
+      <div class="f2"><label>Plaats<input name="plaats" autocomplete="address-level2" required></label><label>Land<select name="land" autocomplete="country-name"><option>Nederland</option><option>België</option></select></label></div>
+      <label class="check"><input type="checkbox" name="cadeau"> Dit is een cadeau (geen prijzen op de pakbon)</label>
+      <label>Opmerking <span class="opt">(optioneel)</span><textarea name="opmerking" rows="2" maxlength="500"></textarea></label>
+      <p class="co-err" id="coErr" role="alert"></p>
+      <button class="btn wide" type="submit" id="coSubmit">Bestelling plaatsen</button>
+      <p class="note" id="coNote"></p>
+    </form>
+    <div class="co-sum"><h3>Je bestelling</h3><div id="coItems"></div>
+      <div class="sum-row"><span>Subtotaal</span><span id="coSub"></span></div>
+      <div class="sum-row"><span>Verzending</span><span id="coShip"></span></div>
+      <div class="sum-row total"><span>Totaal</span><b id="coTotal"></b></div>
+      <p class="note">Prijzen zijn inclusief btw.</p>
+    </div>
+  </div>
+  <div class="co-done" id="coDone" hidden>
+    <svg class="done-mark" aria-hidden="true"><use href="#kompas"/></svg>
+    <h2>Dank je wel!</h2>
+    <p id="coDoneTekst"></p>
+    <button class="btn" type="button" data-close>Verder winkelen</button>
+  </div>
+</dialog>
+
+<!-- informatiepagina's -->
+<dialog id="infoDlg" class="dlg info-dlg" aria-labelledby="infoTitel">
+  <button class="close" type="button" data-close aria-label="Sluiten">×</button>
+  <h2 id="infoTitel"></h2><div id="infoTekst"></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="config.js"></script>
+<script src="products.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
